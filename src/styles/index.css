@@ -1,0 +1,108 @@
+body {
+  background-color: burlywood;
+}
+
+.carousel {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+.carousel * {
+  box-sizing: border-box;
+}
+
+.button {
+  top: 0;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+  transition: all .25s ease-in;
+  opacity: .4;
+  position: absolute;
+  z-index: 2;
+  background: 0 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.button.prev {
+  left: 0;
+}
+
+.button.next {
+  right: 0;
+}
+
+.button:before {
+  margin: 0 5px;
+  display: inline-block;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  content: "";
+}
+
+.button.prev:before {
+  border-right: 8px solid #fff;
+}
+
+.button.next:before {
+  border-left: 8px solid #fff;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  margin: auto;
+  width: 100%;
+  transition: height .15s ease-in;
+}
+
+.slider {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+  width: 100%;
+  transition: all .35s ease-in-out;
+}
+
+.slide {
+  flex-direction: column;
+  flex-flow: column;
+  min-width: 100%;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  background: #000;
+}
+
+.slide img {
+  width: 100%;
+  vertical-align: top;
+  border: 0;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.slide .legend {
+  transition: all .5s ease-in-out;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -45%;
+  width: 90%;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  opacity: .25;
+  transition: opacity .35s ease-in-out;
+}
+
+.carousel:hover .slide .legend {
+  opacity: 1;
+}
