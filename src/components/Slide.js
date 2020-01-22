@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Slide() {
+function Slide(props) {
   return (
     <li className="slide">
-      <img alt="" src="" />
-      <p className="legend"></p>
+      <img alt="" src={props.src} />
+      <p className="legend">{props.legend}</p>
     </li>
   );
 }
