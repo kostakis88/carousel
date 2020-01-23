@@ -1,5 +1,6 @@
-body {
-  background-color: burlywood;
+.container {
+  margin: 0 auto;
+  width: 500px;
 }
 
 .carousel {
@@ -36,6 +37,10 @@ body {
   right: 0;
 }
 
+.button:hover {
+  background: rgba(0,0,0,.3);
+}
+
 .button:before {
   margin: 0 5px;
   display: inline-block;
@@ -66,6 +71,7 @@ body {
   list-style: none;
   width: 100%;
   transition: all .35s ease-in-out;
+  display: flex;
 }
 
 .slide {
@@ -105,4 +111,10 @@ body {
 
 .carousel:hover .slide .legend {
   opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  vertical-align: top;
+  border: 0;
 }

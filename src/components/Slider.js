@@ -8,7 +8,7 @@ class Slider extends React.Component {
       <div className="slider-wrapper">
         <ul className="slider">
           {data.map(img => {
-            return <Slide key={img.src} src={img.src} legend={img.legnd} />
+            return <Slide key={img.src} src={img.src} legend={img.legend} />
           })}
         </ul>
       </div>

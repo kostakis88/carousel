@@ -4,11 +4,13 @@ import Slider from './Slider';
 
 function Container() {
   return (
-  <div className="carousel">
-    <Button className="prev" />
-    <Slider />
-    <Button className="next" />
-  </div>
+    <div className="container">
+        <div className="carousel">
+          <Button className="prev" />
+          <Slider />
+          <Button className="next" />
+        </div>
+    </div>
   );
 }
 
