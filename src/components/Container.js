@@ -1,17 +1,27 @@
 import React from 'react';
 import Button from './Button';
-import Slider from './Slider';
+import Slide from './Slide';
+import { data } from './Data';
 
-function Container() {
-  return (
-    <div className="container">
-        <div className="carousel">
-          <Button className="prev" />
-          <Slider />
-          <Button className="next" />
-        </div>
-    </div>
-  );
+class Container extends React.Component {
+
+  render() {
+    return (
+      <div className="container">
+          <div className="carousel">
+            <Button className="prev" />
+            <div className="slider-wrapper">
+              <ul className="slider">
+                {data.map((img, index) => {
+                  return <Slide key={img.src} src={img.src} legend={img.legend} />
+                })}
+              </ul>
+            </div>
+            <Button className="next"/>
+          </div>
+      </div>
+    );
+  }
 }
 
 export default Container;

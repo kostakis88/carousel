@@ -1,10 +1,11 @@
 import React from 'react';
 
 function Slide(props) {
+  const {src, legend} = props;
   return (
     <li className="slide">
-      <img alt="" src={props.src} />
-      <p className="legend">{props.legend}</p>
+      <img alt="" src={src} />
+      <p className="legend">{legend}</p>
     </li>
   );
 }
