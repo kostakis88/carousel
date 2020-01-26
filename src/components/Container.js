@@ -21,12 +21,16 @@ class Container extends React.Component {
   }
 
   render() {
+    const transformStyles = {
+      transform: `translate3d(${this.state.activeIndex * (-100)}%, 0px, 0px)`,
+      transitionDuration: '350ms' 
+    };
     return (
       <div className="container">
           <div className="carousel">
             <Button className="prev" goToPrevSlide={this.handlePrevClick}/>
             <div className="slider-wrapper">
-              <ul className="slider">
+              <ul className="slider" style={transformStyles}>
                 {data.map((img, index) => {
                   return <Slide key={img.src} src={img.src} legend={img.legend} selected={index === this.state.activeIndex ? 'selected': ''} />
                 })}
