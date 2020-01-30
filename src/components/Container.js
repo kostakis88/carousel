@@ -25,10 +25,12 @@ class Container extends React.Component {
       transform: `translate3d(${this.state.activeIndex * (-100)}%, 0px, 0px)`,
       transitionDuration: '350ms' 
     };
+    const disabledPrev = this.state.activeIndex === 0 ? ' disabled' : '';
+    const disabledNext = this.state.activeIndex === 3 ? ' disabled' : '';
     return (
       <div className="container">
           <div className="carousel">
-            <Button className="prev" goToPrevSlide={this.handlePrevClick}/>
+            <Button className={"button prev" + disabledPrev} goToPrevSlide={this.handlePrevClick}/>
             <div className="slider-wrapper">
               <ul className="slider" style={transformStyles}>
                 {data.map((img, index) => {
@@ -36,7 +38,7 @@ class Container extends React.Component {
                 })}
               </ul>
             </div>
-            <Button className="next" goToNextSlide={this.handleNextClick}/>
+            <Button className={"button next" + disabledNext} goToNextSlide={this.handleNextClick}/>
           </div>
       </div>
     );

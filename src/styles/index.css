@@ -37,6 +37,12 @@
   right: 0;
 }
 
+.button.disabled {
+  opacity: 0;
+  cursor: inherit;
+  display: none;
+}
+
 .button:hover {
   background: rgba(0,0,0,.3);
 }
