@@ -41,9 +41,9 @@ class Container extends React.Component {
               </ul>
             </div>
             <Button className={"button next" + disabledNext} goToNextSlide={this.handleNextClick}/>
-          </div>
             <p className="status">{activeIndex + 1} of 4</p>
             <Dots selected={activeIndex} data={data}/>
+          </div>
       </div>
     );
   }

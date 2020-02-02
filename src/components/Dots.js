@@ -6,7 +6,7 @@ function Dots(props) {
     <ul className="dots">
       {data.map((item, index) => {
         return (
-          <li key={index} value={index} className="dot"></li>
+          <li key={index} value={index} className={selected === index ? 'dot selected' : 'dot'}></li>
         );
       })}
     </ul>
