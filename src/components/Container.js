@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import Slide from './Slide';
-import Dots from './Dots';
+import Dot from './Dot';
 import { data } from './Data';
 
 class Container extends React.Component {
@@ -18,6 +18,12 @@ class Container extends React.Component {
   handlePrevClick = () => {
     this.setState({
       activeIndex: (this.state.activeIndex > 0) ? (this.state.activeIndex - 1) : this.state.activeIndex
+    });
+  }
+
+  handleDotClick = (index) => {
+    this.setState({
+      activeIndex: index
     });
   }
 
@@ -42,7 +48,13 @@ class Container extends React.Component {
             </div>
             <Button className={"button next" + disabledNext} goToNextSlide={this.handleNextClick}/>
             <p className="status">{activeIndex + 1} of 4</p>
-            <Dots selected={activeIndex} data={data}/>
+            <ul className="dots">
+              {data.map((item, index) => {
+                return (
+                  <Dot key={index} value={index} className={activeIndex === index ? 'dot selected' : 'dot'} onDotClick={() => this.handleDotClick(index)}></Dot>
+                );
+              })}
+            </ul>
           </div>
       </div>
     );
